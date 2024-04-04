@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html> 
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="picnic.css">
+</head> 
+  
+<body> 
+    <h4>Question 6</h4>
+
+
+    <article class="card" style="width: 500px; margin: 0 auto; padding: 10px; margin-top: 50px;">
+        <img src="cat.png" />
+        <img src="cat.png" style="right: 50px;"/>
+        <img src="cat.png" style="right: 100px;" />
+        <img src="cat.png" style="right: 150px;" />
+        <img src="cat.png" style="right: 200px;" />
+        <img src="cat.png" style="right: 250px;" />
+
+        <header>
+            <h1>WHAT IS THE SOLUTION TO TEST MOBILE PHONE PRESENTED DURING THE RETECH?</h1>
+        </header>
+        
+        <button class="answer" id="1">DealCert1fy</button>
+        <button class="answer" id="2">DealGertify</button>
+        <button class="answer" id="4">DealCertify</button>
+        <button class="answer" id="3">FeelCertify</button>
+    
+        <footer>
+            <button class="validate error">Validate</a>
+        </footer>
+    </article>
+    
+    <script>
+        for (x=0; x < 1500; x+=60) {
+            for (y=0; y < 1500; y+=70) {
+                var $el = $('<img>', {'src': 'cat.png'});
+                $el.css('bottom', y);
+                $el.css('right', x);
+                $el.toggle();
+
+                $('body').append($el);
+            }
+        }
+        setInterval(function() {
+            $('img').each(function() {
+                rand = parseInt(Math.random() * 2);
+                if (rand == 1) {
+                    $(this).toggle();
+                }
+            });
+        }, 100)
+        var numberOfAttempts = 0;
+
+        // Click an answer select a random other answer
+        $('.answer').on('click', function(e) {
+            e.preventDefault();
+            var rand = parseInt(1 + (Math.random() * 4));
+            if (numberOfAttempts < 3) {
+                rand = parseInt(1 + (Math.random() * 3));
+            }
+
+            numberOfAttempts++;
+
+            $('.answer').removeClass('error');
+
+            $('#'+rand).toggleClass('error');
+        });
+
+        $('h4').on('mouseover', function() {
+            $('.validate').removeClass('error');
+            $('.validate').addClass('success');
+        });
+
+        $('h4').on('mouseleave', function() {
+            $('.validate').removeClass('success');
+            $('.validate').addClass('error');
+        });
+
+        // Click on the H4 hover and validate the answer otherwise it resets
+        $('h4').on('click', function() {
+            if ($('.answer.error').attr('id') == '4') {
+                alert('GOOD');
+            } else {
+                alert('Are you drunk ?');
+            }
+        })
+    </script>
+    <style>
+        article {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        h4 {
+            color: red;
+            width: 100%;
+            background-color: black;
+            text-align: center;
+        }
+    </style>
+</body>
