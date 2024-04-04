@@ -50,16 +50,10 @@
 
         $('#test').on('submit', function(e) {
             e.preventDefault();
-            var total = 0;
-            for (var i=1; i < 7; i++) {
-                total += parseInt($('#'+i).val());
-            }
 
-            if (total != 9) {
+            if (parseInt($('#3').val()) != 9) {
                 alert('NO');
-                for (var i=1; i < 7; i++) {
-                    $('#'+i).val('00000');
-                }
+                    $('#3').val('00000');
             } else {
                 confirm('Are you sure ?????');
             }
