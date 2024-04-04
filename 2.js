@@ -413,10 +413,22 @@ document.addEventListener('keydown', function(event) {
 
 document.getElementById('stop_this').addEventListener('submit', function(event) {
     event.preventDefault()
+    
+    // get the inputs
+    let inputs = document.querySelectorAll('.fck_u')
+    console.log(inputs)
 
-    if (input.value == 850) {
-        document.location.href = "3.html"
-        return
+    var selected = [].filter.call( inputs, function( el ) {
+        return el.checked
+    });
+    
+    if (selected.length === 1) {
+        if (selected[0].value == 850) {
+            document.location.href = "3.html"
+            return;
+        }
     }
+
+
     document.location.reload()
 })
