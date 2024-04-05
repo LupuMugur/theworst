@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Form</title>
+    <style>
+      /* Add your custom CSS styles here */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fff; /* White text */
+        background-image: url("flag.gif");
+        background-size: cover;
+      }
+      .container {
+        max-width: 900px; /* Increased width */
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #36465d; /* Lighter navy blue background */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+      }
+      .form-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .form-header h2 {
+        font-size: 32px;
+        color: #fff; /* White text */
+        margin-bottom: 10px;
+      }
+      .form-subheader {
+        font-size: 18px;
+        color: #ccc; /* Light gray text */
+        margin-bottom: 20px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 18px;
+        color: #ccc; /* Light gray text */
+        margin-bottom: 5px;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"] {
+        width: calc(100% - 30px); /* Adjusted width */
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: #fff; /* White text */
+        background-color: #283647; /* Darker navy blue input background */
+        transition: border-color 0.3s;
+      }
+      .form-group input[type="text"]:focus,
+      .form-group input[type="email"]:focus,
+      .form-group input[type="tel"]:focus {
+        border-color: #dc1a1a; /* Green border color on focus */
+        outline: none;
+      }
+      .form-group input[type="checkbox"] {
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+      .submit-btn {
+        background-color: #dc1a1a; /* Green button color */
+        color: #fff; /* White text */
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: progress;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+      .submit-btn:hover {
+        background-color: #dc1a1a; /* Darker green on hover */
+      }
+      .progress-bar {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        color: #ccc; /* Light gray text */
+      }
+      .progress-bar span {
+        flex: 1;
+        text-align: center;
+      }
+      .progress-bar span.active {
+        color: #dc1a1a; /* Green text for active step */
+      }
+      .progress-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle.active {
+        background-color: #dc1a1a; /* Green color for active circle */
+        color: #fff; /* White text for active circle */
+      }
+
+      .line {
+        flex: 1;
+        height: 2px;
+        background-color: #ccc;
+      }
+      .circle-photo {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        transform: translateY(-50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+      .circle-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle-photo">
+      <img src="macrie.jpg" alt="Profile Photo" />
+    </div>
+    <div class="container">
+      <div class="form-header">
+        <h2>Soutenez la candidature de Marine Le Pen</h2>
+        <p class="form-subheader">
+          Si vous aussi, vous aimez la France, soutenez la candidature à
+          l'élection présidentielle de Marine Le Pen
+        </p>
+      </div>
+      <div class="progress-bar">
+        <div class="circle active">1</div>
+        <div class="line"></div>
+        <div class="circle">2</div>
+        <div class="line"></div>
+        <div class="circle">3</div>
+        <div class="line"></div>
+        <div class="circle">4</div>
+      </div>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="prenom">Prénom:</label>
+          <input type="text" id="prenom" name="prenom" required />
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom:</label>
+          <input type="text" id="nom" name="nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="telephone">Téléphone:</label>
+          <input type="tel" id="telephone" name="telephone" required />
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="rgpd" required />
+            Je souhaite m'inscrire à la lettre d'information de campagne.
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="newsletter" />
+            En cliquant, vous acceptez les conditions générales d'utilisation et
+            la politique de conservation de données.
+          </label>
+        </div>
+        <button type="submit" class="submit-btn">J'M LA FRANCE</button>
+      </form>
+    </div>
+  </body>
+</html>
