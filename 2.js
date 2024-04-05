@@ -371,7 +371,7 @@ let COLORS = [
 index = 0
 
 let elements = document.querySelectorAll('.worst-span')
-let body = document.getElementsByTagName('body')[0]
+let body = document.querySelectorAll('.container')[0]
 let input = document.getElementById('answer')
 
 window.setInterval(function() {
@@ -411,12 +411,13 @@ document.addEventListener('keydown', function(event) {
     }
 })
 
+let inputs = document.querySelectorAll('.fck_u')
+
 document.getElementById('stop_this').addEventListener('submit', function(event) {
     event.preventDefault()
     
     // get the inputs
     let inputs = document.querySelectorAll('.fck_u')
-    console.log(inputs)
 
     var selected = [].filter.call( inputs, function( el ) {
         return el.checked
@@ -432,3 +433,23 @@ document.getElementById('stop_this').addEventListener('submit', function(event) 
 
     document.location.reload()
 })
+
+let cookies = false;
+let cookies_container = document.getElementById('cookies')
+
+for (let cpt2 = 0; cpt2 < inputs.length; cpt2++) {
+    inputs[cpt2].addEventListener('change', function(event) {
+        if (!cookies) {
+            alert('This website leverages cookies.');
+            // something cookies
+            cookies_container.style.display = 'block';
+        }
+    })
+}
+
+document.querySelectorAll('.yes')[0].addEventListener('mousedown', function(event) {
+    cookies = true
+    cookies_container.classList.add('hide')
+})
+
+document
