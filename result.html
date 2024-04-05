@@ -33,8 +33,30 @@
             <p>SUUUUUUUREEE ?</p>
         </div>
         <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="modal3-btn">Don't see it</a>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <p>Really ?</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="modal4-btn">Don't see it</a>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <p>It will be definitive !</p>
+        </div>
+        <div class="modal-footer">
           <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="gooo">Don't see it</a>
         </div>
+    </div>
+
+    <div class="running-horse" style="display: none;">
+        <img src="running-horse.gif"/>
     </div>
 
     <audio controls autoplay id="audio" style="width: 1px;">
@@ -59,8 +81,28 @@
             instance.open(); 
         });
 
+        $('#modal3-btn').on('click', function() {
+            const elem = document.getElementById('modal4');
+            const instance = M.Modal.init(elem, {dismissible: false});
+            instance.open(); 
+        });
+
+        $('#modal4-btn').on('click', function() {
+            const elem = document.getElementById('modal5');
+            const instance = M.Modal.init(elem, {dismissible: false});
+            instance.open(); 
+        });
+
         $('#gooo').on('click', function() {
             document.getElementById('audio').play();
+            $('.running-horse').show();
         });
     </script>
+
+    <style>
+        .running-horse {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
 </body>
