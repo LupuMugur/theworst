@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html> 
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="redirect.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="picnic.css">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+</head> 
+  
+<body>
+    
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <form id="form">
+                        <div class="instructions">
+                            In order to access your results, please, pay the €999,99 by credit card
+                        </div>
+                        <img src="mastercard.png" width="100px;"/>
+                        <div class="trust">Trust us! We are not thieves </div>
+                        <img src="lock.png" width="50px"/>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input value="" id="owner" type="text" class="validate" required>
+                                <label class="active" for="owner">Owner name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input value="" id="cardnumber" type="text" class="validate" required>
+                                <label class="active" for="cardnumber">Card number</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input value="" id="expiration" type="text" class="validate required
+                                <label class="active" for="expiration">Expiration</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input value="" id="cvc" type="text" class="validate" required>
+                                <label class="active" for="cvc">CVC</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input value="" id="pin" type="text" class="validate" required>
+                                <label class="active" for="pin">Code pin</label>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action">
+                            <input type="submit" value="PAY !"/>
+                            <input type="submit" value="I don't want to pay"/>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+
+    <script>
+        $('#form').on('submit', function(e) {
+            e.preventDefault();
+
+            alert('THANK YOU FOR YOUR PAYMENT ! CHEERS MATE');
+
+            window.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&source_ve_path=MTc4NDI0";
+        })
+    </script>
+</body>
