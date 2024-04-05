@@ -425,7 +425,10 @@ document.getElementById('stop_this').addEventListener('submit', function(event) 
     
     if (selected.length === 1) {
         if (selected[0].value == 850) {
-            document.location.href = "3.html"
+            document.location.href = "question3.html";
+            return;
+        } else {
+            document.location.href = "404.html";
             return;
         }
     }

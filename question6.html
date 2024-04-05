@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html> 
     <script src="jquery-3.7.1.min.js"></script>
+    <script src="redirect.js"></script>
     <link rel="stylesheet" href="picnic.css">
 </head> 
   
@@ -79,7 +80,7 @@
         // Click on the H4 hover and validate the answer otherwise it resets
         $('h4').on('click', function() {
             if ($('.answer.error').attr('id') == '4') {
-                alert('GOOD');
+                redirect('question9.html');
             } else {
                 alert('Are you drunk ?');
             }
