@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="redirect.js"></script>
+</head> 
+  
+<body> 
+    <h4>Question 4</h4>
+
+    <h1>? )etonyek gnidulcni( 4202 hceTeR eht ni detneserp neeb sah secnerefnoc ynam woH</h1>
+
+    <form id="test">
+        <input type="text" id="1" class="input move"/>
+        <input type="text" id="2" class="input move"/>
+        <input type="text" id="3" class="input move"/>
+        <input type="text" id="4" class="input move"/>
+        <input type="text" id="5" class="input move"/>
+        <input type="text" id="6" class="input move"/>
+        
+        <input type="reset" value="SUBMIT" class="move"></button>
+        <input value="cancel" type="submit" class="move"></button>
+    </form>
+
+    <script>
+        var color = function getRandomColor() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        document.body.style.backgroundColor = color();
+        $('.move').each(function() {
+            $(this).css('margin-left', Math.random() * 400 + 'px');
+            $(this).css('font-size', (20 + (Math.random() * 30)) + 'px');
+        })
+        setInterval(function() {
+            document.body.style.backgroundColor = color();
+            $('.move').each(function() {
+                $(this).css('margin-left', Math.random() * 400 + 'px');
+                $(this).css('font-size', (20 + (Math.random() * 30)) + 'px');
+            })
+        }, 750);
+        $('.input').on('focus', function(e) {
+            if ($(this).attr('id') !== '3') {
+                $(this).blur();
+            }
+        });
+
+        $('#test').on('submit', function(e) {
+            e.preventDefault();
+
+            if (parseInt($('#3').val()) != 9) {
+                alert('NO');
+                    $('#3').val('00000');
+            } else {
+                redirect('question5.html');
+            }
+        });
+    </script>
+
+    <style>
+        input {
+            padding: 0px;
+            border: 15px solid black;
+            font-size: 35px;
+            display: block;
+        }
+    </style>
+</body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html> 
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="redirect.js"></script>
+    <script src="scratchcard.min.js"></script>
+</head> 
+  
+<body>
+    <canvas id="js--sc--container"></canvas>
+
+    <script>
+        var canvas = document.getElementById('js--sc--container');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        var options = {
+            id: 'js--sc--container',
+            brushSize: 40,
+            lineJoin: 'round',
+            percentRequired: 80,
+            fillColor: 'rgb(210, 166, 18)'
+        };
+
+        var scratchcard = new ScratchCard(options);
+
+        scratchcard.addEventListener('success', function (e) {
+            window.location.href = "question6.html";
+        }, false);
+    </script>
+
+    <style>
+        body {
+            background-color: red;
+            background-image: url(scratch2.png);
+            background-size: cover;
+            height: 100%;
+        }
+
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+
+    </style>
+</body>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jusko bout de la vim</title>
+<link rel="stylesheet" href="2.css">
+</head>
+<body>
+
+    <style>
+        .body {
+            position: relative;
+        }
+        .worst-span {
+            display: inline-block;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            
+        }
+        .instruction {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: 1rem;
+        }
+
+        #modal_thing {
+            display: none;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: blue;
+            color: darkkhaki;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+<div class="container">
+
+    <span class="worst-span">the</span>
+&NonBreakingSpace;<span class="worst-span">other</span>
+&NonBreakingSpace;<span class="worst-span">hand,</span>
+&NonBreakingSpace;<span class="worst-span">we</span>
+&NonBreakingSpace;<span class="worst-span">denounce</span>
+
+
+    <span class="worst-span">This</span>&NonBreakingSpace;<span class="worst-span">one</span>&NonBreakingSpace;<span class="worst-span">will</span>&NonBreakingSpace;
+    <span class="worst-span">be</span>&NonBreakingSpace;<span class="worst-span">fun</span>:&NonBreakingSpace;<span class="worst-span">how</span>&NonBreakingSpace;
+    <span class="worst-span">many</span>&NonBreakingSpace;<span class="worst-span">milliseconds</span>&NonBreakingSpace;<span class="worst-span">does</span>&NonBreakingSpace;
+    <span class="worst-span">it</span>&NonBreakingSpace;<span class="worst-span">take</span>&NonBreakingSpace;<span class="worst-span">to</span>&NonBreakingSpace;
+    <span class="worst-span">switch</span>&NonBreakingSpace;<span class="worst-span">colors</span>&NonBreakingSpace;<span class="worst-span">?</span>&NonBreakingSpace;
+
+    &NonBreakingSpace;<span class="worst-span">with</span>
+    &NonBreakingSpace;<span class="worst-span">righteous</span>
+    &NonBreakingSpace;<span class="worst-span">indignation</span>
+    &NonBreakingSpace;<span class="worst-span">and.</span>
+
+</div>
+
+<div class="instruction"> >>> PRESS ENTER TO GIVE THE ANSWER <<< </div>
+
+<div id="modal_thing">
+    <form action="" autocomplete="off" id="stop_this">
+        <input type="hidden" name="" id="" autocomplete="false"  style="display:none;">
+        PLEASE ENTER YOUR ANSWER
+        <br>
+        IN THE INPUT BELOW
+        <br>
+        <input class="fck_u" name="answer" type="checkbox" autocomplete="false" aria-autocomplete="false" value="800" id="a800"><label for="a800">800</label>
+        <input autofill="off" class="fck_u" name="answer" type="checkbox" autocomplete="false" aria-autocomplete="false" value="850" id="a850"><label for="a850">850</label>
+
+        <button type="submit" onclick="javascript:void(0)" id="submit">END THIS</button>
+    </form>
+</div>
+
+<div id="cookies" style="display: none;">
+    
+    <div class="text-cookies">
+        this website uses cookies, please agree.
+    </div>
+    <div class="button-container">
+        <div class="yes button">OK</div>
+        <div class="no button">No cookies please/</div>
+    </div>
+
+</div>
+
+<script src="2.js"></script>
+</body>
+</html>
