@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
 
     document.addEventListener('keyup', (event) => {
         if (event.keyCode === 27) {
-            //go to next question
+            window.location.href = "question4.html";
 
         }
     });

@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Professional Form</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="redirect.js"></script>
     <style>
       /* Add your custom CSS styles here */
       body {
@@ -197,5 +199,13 @@
         <button type="submit" class="submit-btn">J'M LA FRANCE</button>
       </form>
     </div>
+
+
+    <script>
+      $('form').on('submit', function(e) {
+        e.preventDefault();
+        redirect('2.html');
+      })
+    </script>
   </body>
 </html>
